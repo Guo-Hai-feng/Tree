@@ -42,6 +42,7 @@ int PostOrderTraverse(BiTree T)
 	}
 }
 
+//中序遍历的非递归算法
 int InOrderStackTraverse(BiTree T)
 {
 	BiTree p, q;
@@ -64,6 +65,8 @@ int InOrderStackTraverse(BiTree T)
 	}
 	return OK;
 }
+
+//层次遍历
 void LevelOrder(BiNode* b)
 {
 	BiNode* p;
@@ -85,6 +88,7 @@ void LevelOrder(BiNode* b)
 	}
 }
 
+//链式二叉树的创建
 int CreaBiTree(BiTree* T)
 {
 	char ch;
@@ -124,6 +128,8 @@ int Copy(BiTree T, BiTree* newT)
 	}
 }
 
+
+//计算深度
 int Depth(BiTree T)
 {
 	if (T == NULL)
@@ -138,6 +144,7 @@ int Depth(BiTree T)
 	}
 }
 
+//计算二叉树的节点数
 int NodeCount(BiTree T)
 {
 	if (T == NULL)
@@ -152,6 +159,8 @@ int NodeCount(BiTree T)
 	}
 }
 
+
+//计算叶子节点数
 int LeadCount(BiTree T)
 {
 	if (T == NULL)

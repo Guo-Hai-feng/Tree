@@ -131,6 +131,7 @@
     <ClInclude Include="Queue.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="tree.h" />
+    <ClInclude Include="tree2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />

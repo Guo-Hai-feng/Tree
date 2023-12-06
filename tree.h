@@ -23,83 +23,30 @@ typedef struct BiNode
 
 
 
-//三叉链表
-typedef struct TriNode
-{
-	Type data;
-	struct TriNode* lchild, * rchild, * parent;//方便找前驱
-}TriNode,*TriTree;
-
-
-
-//线索二叉树
-/*二叉树的链式存储*/
-typedef struct BiThrNode
-{
-	Type data;
-	int ltag, rtag;//标志域
-	struct BiNode* lchild, * rchild;//左右孩子指针
-
-}BiThrNode, * BiThrTree;
-
-
-
-//双亲表示法
-typedef struct PTNode
-{
-	Type data;
-	int parent;//双亲位置域
-}PTNode;
-
-typedef struct
-{
-	PTNode node[MAX_TREE_SIZE];
-	int r, n;//根节点的位置和节点个数
-}Ptree;
-
-
-
-//孩子链表
-//孩子结构：child|next
-//双亲节点结构：data|firstchild
-typedef struct CTNode
-{
-	int child;
-	struct CTNode* next;
-}*ChildPtr;
-
-typedef struct
-{
-	Type data;
-	ChildPtr firstchild;//孩子链表头指针
-}CTBox;
-
-typedef struct
-{
-	CTBox nodes[MAX_TREE_SIZE];
-	int r, n;
-}CTree;
-
-
-
-//孩子兄弟表示法
-typedef struct CSNode
-{
-	Type data;
-	struct CSNode* firstchild, * nextsibling;
-}CSNode,*CSTtree;
-
+//链式二叉树先序遍历
 int PreOrderTraverse(BiTree T);
 int visit(BiTree T);
+
+//链式二叉树中序遍历
 int InOrderTraverse(BiTree T);
+
+//链式二叉树后序遍历
 int PostOrderTraverse(BiTree T);
 
+
+//中序遍历的非递归操作
 int InOrderStackTraverse(BiTree T);
 void LevelOrder(BiNode* b);
 //先序建立
 int CreaBiTree(BiTree* T);
 //复制二叉树
 int Copy(BiTree T, BiTree* newT);
+
+//计算深度
 int Depth(BiTree T);
+
+//节点数
 int NodeCount(BiTree T);
+
+//叶子节点数
 int LeadCount(BiTree T);
