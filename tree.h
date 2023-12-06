@@ -38,7 +38,7 @@ int PostOrderTraverse(BiTree T);
 int InOrderStackTraverse(BiTree T);
 void LevelOrder(BiNode* b);
 //先序建立
-int CreaBiTree(BiTree* T);
+BiTree CreaBiTree();
 //复制二叉树
 int Copy(BiTree T, BiTree* newT);
 

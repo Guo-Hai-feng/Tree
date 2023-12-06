@@ -89,26 +89,32 @@ void LevelOrder(BiNode* b)
 }
 
 //链式二叉树的创建
-int CreaBiTree(BiTree* T)
+BiTree CreaBiTree()
 {
+	int in;
 	char ch;
-	scanf("%c", &ch);
-	if (ch == '#')
+	printf("请输入关键字项和其他数据域,输入-1关键字表示空节点\n");
+	scanf("%d,%c", &in, &ch);
+
+	//如果输入-1，表示空节点
+	if (in == -1)
 	{
-		T = NULL;
+		return NULL;
 	}
-	else
-	{
-		if (!(*T = (BiTree)malloc(sizeof(BiNode))))
-		{
-			exit(OVERFLOW);
-		}
-		(*T)->data = ch;
-		CreaBiTree((*T)->lchild);//构造左子树
-		CreaBiTree((*T)->rchild);//构造右子树
-	}
-	return OK;
+
+	//创建当前节点
+	BiTree node = (BiTree)malloc(sizeof(BiNode));
+	node->data.key = in;
+	node->data.otherinfo = ch;
+
+	//递归构建左子树和右子树
+	printf("为节点%d构建左子树：\n", in);
+	node->lchild = CreaBiTree();
+	printf("为节点%d构建右子树：\n", in);
+	node->rchild = CreaBiTree();
+	return node;
 }
+
 
 //复制二叉树
 int Copy(BiTree T, BiTree* newT)
